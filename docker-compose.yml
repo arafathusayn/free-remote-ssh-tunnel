@@ -2,8 +2,6 @@ services:
   openssh-server:
     image: linuxserver/openssh-server
     container_name: openssh-server
-    ports:
-      - "2022:2222"
     env_file:
       - .env
     environment:
