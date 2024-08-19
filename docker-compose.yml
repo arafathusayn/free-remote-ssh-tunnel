@@ -1,0 +1,18 @@
+services:
+  openssh-server:
+    image: linuxserver/openssh-server
+    container_name: openssh-server
+    ports:
+      - "2022:2222"
+    env_file:
+      - .env
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Dhaka
+      - PASSWORD_ACCESS=false
+      - USER_NAME=${USER_NAME}
+      - SUDO_ACCESS=false
+    volumes:
+      - ./ssh_config:/config
+    restart: unless-stopped
