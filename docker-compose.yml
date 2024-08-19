@@ -16,3 +16,4 @@ services:
     volumes:
       - ./ssh_config:/config
     restart: unless-stopped
+    network_mode: host
